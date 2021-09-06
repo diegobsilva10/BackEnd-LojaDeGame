@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LojaDeGameApplication {
 
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(LojaDeGameApplication.class, args);
 	}
