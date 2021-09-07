@@ -21,7 +21,7 @@ public class CategoriaModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    private Long idCategoria;
 
     @NotBlank(message = "Nome da Categoria")
     @Size(min = 2, max = 50)
@@ -33,11 +33,11 @@ public class CategoriaModel implements Serializable {
 
 
     public Long getId() {
-        return id;
+        return idCategoria;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdCategoria(Long idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getNomeCategoria() {
