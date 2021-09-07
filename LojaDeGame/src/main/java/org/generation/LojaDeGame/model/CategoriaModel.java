@@ -9,6 +9,8 @@ package org.generation.LojaDeGame.model;
  *
  */
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 
@@ -21,9 +23,13 @@ public class CategoriaModel implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Nome da Categoria")
+    @Size(min = 2, max = 50)
     private String nomeCategoria;
 
-    private String descricaoCtegoria;
+    @NotBlank(message = "Descrição da categoria")
+    @Size(min = 2, max = 100)
+    private String descricaoCategoria;
 
 
     public Long getId() {
@@ -42,11 +48,11 @@ public class CategoriaModel implements Serializable {
         this.nomeCategoria = nomeCategoria;
     }
 
-    public String getDescricaoCtegoria() {
-        return descricaoCtegoria;
+    public String getDescricaoCategoria() {
+        return descricaoCategoria;
     }
 
-    public void setDescricaoCtegoria(String descricaoCtegoria) {
-        this.descricaoCtegoria = descricaoCtegoria;
+    public void setDescricaoCategoria(String descricaoCategoria) {
+        this.descricaoCategoria = descricaoCategoria;
     }
 }
