@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 public class CategoriaModel{
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long idCategoria;
 
     @NotBlank(message = "Nome da Categoria")
