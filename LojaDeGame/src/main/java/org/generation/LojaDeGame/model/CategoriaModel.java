@@ -9,11 +9,14 @@ package org.generation.LojaDeGame.model;
  *
  */
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Entity
 @Table(name = "TB_CATEGORIA")
-public class CategoriaModel {
+public class CategoriaModel implements Serializable {
+    private static final long serialVersionUID =1L;
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
