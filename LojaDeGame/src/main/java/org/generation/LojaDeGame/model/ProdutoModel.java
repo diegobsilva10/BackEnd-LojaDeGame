@@ -1,44 +1,49 @@
 package org.generation.LojaDeGame.model;
 /**
- * Classe utilizada como entidade no banco de dados para a criação das categorias.
+ * Classe utilizada como entidade no banco de dados para a criação dos produtos
  *
  * @author Diego Silva
  * @since 1.0
  *
  */
 
-import org.springframework.format.annotation.DateTimeFormat;
+
+
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.math.BigDecimal;
-import java.util.Date;
-
+import java.io.Serializable;
 
 @Entity
 @Table(name = "TB_PRODUTO")
-public class ProdutoModel {
-    private static final long servialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idProduto;
 
-    @NotBlank(message = "Nome do Produto")
-    @Size(min = 2, max = 50)
+public class ProdutoModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idProduto;
+
+    @NotNull(message = "Nome do Produto")
+    @Size(min = 2, max = 200)
     private String nomeProduto;
 
-    @NotBlank
-    private BigDecimal valor;
+    @NotNull
+    private String descricaoProduto;
 
-    @DateTimeFormat (pattern = "dd/MM/yyy HH:mm")
-    private Date dataHora;
+    @NotNull
+    private float valor;
 
-    public Long getIdProduto() {
+    @NotNull
+    private int qtd;
+
+
+
+
+    public long getIdProduto() {
         return idProduto;
     }
 
-    public void setIdProduto(Long idProduto) {
+    public void setIdProduto(long idProduto) {
         this.idProduto = idProduto;
     }
 
@@ -50,19 +55,27 @@ public class ProdutoModel {
         this.nomeProduto = nomeProduto;
     }
 
-    public BigDecimal getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
 
-    public Date getDataHora() {
-        return dataHora;
+    public String getDescricaoProduto() {
+        return descricaoProduto;
     }
 
-    public void setDataHora(Date dataHora) {
-        this.dataHora = dataHora;
+    public void setDescricaoProduto(String descricaoProduto) {
+        this.descricaoProduto = descricaoProduto;
+    }
+
+    public int getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
     }
 }
