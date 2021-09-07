@@ -17,7 +17,7 @@ import java.util.Date;
 @Entity
 @Table(name = "TB_PRODUTO")
 public class ProdutoModel {
-    private static void final long servialVersionUID = 1L;
+    private static final long servialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
