@@ -10,10 +10,13 @@ package org.generation.LojaDeGame.model;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "TB_PRODUTO")
@@ -29,6 +32,10 @@ public class ProdutoModel {
 
     @NotNull
     private String descricaoProduto;
+
+    @ManyToOne
+    @JsonIgnoreProperties ("produto")
+    private CategoriaModel categoriaModel;
 
     @NotNull
     private float valor;

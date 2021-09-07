@@ -8,9 +8,12 @@ package org.generation.LojaDeGame.model;
  * @since 1.0
  *
  */
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 
 @Entity
@@ -28,6 +31,12 @@ public class CategoriaModel{
     @NotBlank(message = "Descrição da categoria")
     @Size(min = 2, max = 100)
     private String descricaoCategoria;
+
+
+    @OneToMany(mappedBy = "nomeProduto", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("produto")
+    private List<ProdutoModel> ProdutoModels;
+
 
 
     public Long getId() {
