@@ -11,17 +11,15 @@ package org.generation.LojaDeGame.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 
 
 @Entity
 @Table(name = "TB_CATEGORIA")
-public class CategoriaModel implements Serializable {
-    private static final long serialVersionUID =1L;
+public class CategoriaModel{
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long idCategoria;
+    private long idCategoria;
 
     @NotBlank(message = "Nome da Categoria")
     @Size(min = 2, max = 50)
