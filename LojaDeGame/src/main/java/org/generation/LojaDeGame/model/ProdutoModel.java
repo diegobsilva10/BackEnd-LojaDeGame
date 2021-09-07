@@ -7,6 +7,8 @@ package org.generation.LojaDeGame.model;
  *
  */
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -20,7 +22,7 @@ public class ProdutoModel {
     private static final long servialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idProduto;
 
     @NotBlank(message = "Nome do Produto")
     @Size(min = 2, max = 50)
@@ -29,5 +31,38 @@ public class ProdutoModel {
     @NotBlank
     private BigDecimal valor;
 
+    @DateTimeFormat (pattern = "dd/MM/yyy HH:mm")
     private Date dataHora;
+
+    public Long getIdProduto() {
+        return idProduto;
+    }
+
+    public void setIdProduto(Long idProduto) {
+        this.idProduto = idProduto;
+    }
+
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
+
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public Date getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(Date dataHora) {
+        this.dataHora = dataHora;
+    }
 }
