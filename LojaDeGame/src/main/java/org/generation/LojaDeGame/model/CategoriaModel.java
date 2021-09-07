@@ -23,6 +23,9 @@ public class CategoriaModel implements Serializable {
 
     private String nomeCategoria;
 
+    private String descricaoCtegoria;
+
+
     public Long getId() {
         return id;
     }
@@ -37,5 +40,13 @@ public class CategoriaModel implements Serializable {
 
     public void setNomeCategoria(String nomeCategoria) {
         this.nomeCategoria = nomeCategoria;
+    }
+
+    public String getDescricaoCtegoria() {
+        return descricaoCtegoria;
+    }
+
+    public void setDescricaoCtegoria(String descricaoCtegoria) {
+        this.descricaoCtegoria = descricaoCtegoria;
     }
 }
